@@ -1,14 +1,19 @@
 let currentPlayer = 1, isProcessing = false, timeLeft = 180;
 let hasPlaced = { 1: false, 2: false };
 
+let timerInterval; 
+
 function startTimer() {
-    const timer = setInterval(() => {
+    timerInterval = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer-display').textContent = `Time: ${Math.floor(timeLeft/60)}:${(timeLeft%60).toString().padStart(2,'0')}`;
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        document.getElementById('timer-display').textContent = 
+            `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+        
         if (timeLeft <= 0) checkWinCondition(true);
     }, 1000);
 }
-
 async function handlePlayerMove(r, c) {
     if (isProcessing || (gameState[r][c].owner !== null && gameState[r][c].owner !== currentPlayer)) return;
     
@@ -54,6 +59,20 @@ function checkWinCondition(isTimeUp = false) {
     }
 }
 
-function endGame(msg) { alert(msg); location.reload(); }
+function endGame(msg) {
+    // Stop the timer
+    clearInterval(timerInterval);
+    
+    // Get the elements
+    const overlay = document.getElementById('result-overlay');
+    const message = document.getElementById('result-message');
+    
+    // Set the message and show the box
+    message.innerText = msg;
+    overlay.classList.remove('hidden');
+    
+    // Stop any further clicking
+    isProcessing = true;
+}
 
 document.addEventListener("DOMContentLoaded", () => { createGrid(); startTimer(); });
