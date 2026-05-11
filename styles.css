@@ -1,0 +1,36 @@
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 4px;
+    width: 90vw;
+    height: 80vh;
+    margin: 20px auto;
+    background: #000;
+    border: 3px solid #444;
+}
+
+.cell {
+    background: #111;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.cell span {
+    font-size: 10px;
+    margin: 1px;
+    pointer-events: none;
+}
+
+.player-1 { color: #FF69B4; text-shadow: 0 0 10px #FF69B4; } /* Pink */
+.player-2 { color: #FF8C00; text-shadow: 0 0 10px #FF8C00; } /* Orange */
+
+.exploding { animation: explode-pulse 0.4s ease-out; }
+@keyframes explode-pulse {
+    50% { transform: scale(1.4); background: #fff; box-shadow: 0 0 20px #fff; }
+}
