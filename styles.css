@@ -27,8 +27,8 @@
     pointer-events: none;
 }
 
-.player-1 { color: #FF69B4; text-shadow: 0 0 10px #FF69B4; } /* Pink */
-.player-2 { color: #FF8C00; text-shadow: 0 0 10px #FF8C00; } /* Orange */
+.player-1 { color: #FF69B4; text-shadow: 0 0 10px #FF69B4; } /* pink heart */
+.player-2 { color: #FF8C00; text-shadow: 0 0 10px #FF8C00; } /* orange heart */
 
 .exploding { animation: explode-pulse 0.4s ease-out; }
 @keyframes explode-pulse {
