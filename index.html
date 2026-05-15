@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"><!--appears like a function call of sorts? references the css containing the styling of the game-->
     <title>Chain Reactor</title>
 </head>
 <body>
-    <h1 style="text-align: center; color: white;">Chain Reactor</h1>
-    <div id="timer-display" style="color: white; text-align: center; font-size: 24px;">Time: 3:00</div>
+    <h1 style="text-align: center; color: white;">Chain Reactor Gamr</h1><!--the heading of the game in white-->
+    <div id="timer-display" style="color: white; text-align: center; font-size: 24px;">Time: 3:00</div><!--the timer displayed in white aligned to the center with a font size of 24 pixel.... font style can be changed to Times New Roman or whatevever works-->
     <div id="game-board"></div>
 
     <script src="engine.js"></script>
@@ -17,7 +17,7 @@
     <div id="result-overlay" class="hidden">
     <div id="result-box">
         <h2 id="result-message">Game Over!</h2>
-        <button onclick="location.reload()">Play Again! ✨</button>
+        <button onclick="location.reload()">Play Again! ✨</button><!--in case the user is interested in playing the game yet again, there is an option for the game to be reloaded-->
     </div>
 </div>
 </body>
