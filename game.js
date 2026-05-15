@@ -105,6 +105,6 @@ function stopGame() {
     const hud = document.querySelector('.hud-container');
     if (hud) hud.style.display = 'none';
     document.getElementById('game-board').style.display = 'none';
-    document.querySelector('h1').innerText = "Thanks for playing! ✨";
+    document.querySelector('h1').innerText = "Thanks for playing! ";
 }
 document.addEventListener("DOMContentLoaded", createGrid);
