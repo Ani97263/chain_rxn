@@ -1,7 +1,6 @@
 const rows = 12, cols = 6;
 let gameState = Array.from({ length: rows }, () => 
-    Array.from({ length: cols }, () => ({ count: 0, owner: null }))
-);
+    Array.from({ length: cols }, () => ({ count: 0, owner: null })));
 
 function getCapacity(r, c) {
     let n = 0;
