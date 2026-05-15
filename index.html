@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css"><!--appears like a function call of sorts? references the css containing the styling of the game-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Chain Reactor</title>
 </head>
 <body>
-    <h1 style="text-align: center; color: white;">Chain Reactor Gamr</h1><!--the heading of the game in white-->
-    <div id="timer-display" style="color: white; text-align: center; font-size: 24px;">Time: 3:00</div><!--the timer displayed in white (timer of a total of 3 minutes, beyond which the game doesn't extend) aligned to the center with a font size of 24 pixel.... font style can be changed to Times New Roman or whatevever works-->
+    <h1>Chain Reactor</h1>
+    <div id="timer-display">Time: 3:00</div>
     <div id="game-board"></div>
+    <div id="result-overlay" class="hidden">
+        <div id="result-box">
+            <h2 id="result-message">Game Over!</h2>
+            <div class="button-group">
+                <button class="play-btn" onclick="location.reload()">Play Again! ✨</button>
+                <button class="stop-btn" onclick="stopGame()">Stop 🛑</button>
+            </div>
+        </div>
+    </div>
 
     <script src="engine.js"></script>
     <script src="ui.js"></script>
     <script src="game.js"></script>
-
-    <div id="result-overlay" class="hidden">
-    <div id="result-box">
-        <h2 id="result-message">Game Over!</h2>
-        <button onclick="location.reload()">Play Again! ✨</button><!--in case the user is interested in playing the game yet again, there is an option for the game to be reloaded-->
-    </div>
-</div>
 </body>
 </html>
