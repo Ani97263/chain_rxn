@@ -29,7 +29,6 @@ function updateTurnDisplay() {
         indicator.className = "turn-orange";
     }
 }
-
 async function handlePlayerMove(r, c) {
     if (isProcessing || (gameState[r][c].owner !== null && gameState[r][c].owner !== currentPlayer)) return;
     
