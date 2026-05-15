@@ -93,7 +93,6 @@ h1 {
 }
 .turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
 .turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
-
 #player-name {
     text-transform: uppercase;
     letter-spacing: 1px;
