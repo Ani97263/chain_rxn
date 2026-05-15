@@ -2,7 +2,6 @@ let currentPlayer = 1, isProcessing = false, timeLeft = 180;
 let hasPlaced = { 1: false, 2: false };
 let timerStarted = false;
 let timerInterval;
-
 function startTimer() {
     timerInterval = setInterval(() => {
         timeLeft--;
@@ -30,6 +29,7 @@ function updateTurnDisplay() {
         indicator.className = "turn-orange";
     }
 }
+
 async function handlePlayerMove(r, c) {
     if (isProcessing || (gameState[r][c].owner !== null && gameState[r][c].owner !== currentPlayer)) return;
     
@@ -37,7 +37,6 @@ async function handlePlayerMove(r, c) {
         startTimer();
         timerStarted = true;
     }
-
     hasPlaced[currentPlayer] = true;
     gameState[r][c].count++;
     gameState[r][c].owner = currentPlayer;
@@ -102,12 +101,10 @@ function endGame(msg) {
     overlay.classList.remove('hidden');
     isProcessing = true;
 }
-
 function stopGame() {
     document.getElementById('result-overlay').classList.add('hidden');
     document.getElementById('game-board').style.display = 'none';
     document.getElementById('timer-display').style.display = 'none';
     document.querySelector('h1').innerText = "Thanks for playing! ";
 }
-
 document.addEventListener("DOMContentLoaded", createGrid);
