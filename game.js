@@ -16,7 +16,20 @@ function startTimer() {
         document.getElementById('timer-display').textContent = `Time: ${mins}:${secs.toString().padStart(2, '0')}`;
     }, 1000);
 }
-
+function updateTurnDisplay() {
+    const indicator = document.getElementById('turn-indicator');
+    const nameSpan = document.getElementById('player-name');
+    
+    if (currentPlayer === 1) {
+        nameSpan.innerText = "Pink";
+        nameSpan.style.color = "#FF69B4";
+        indicator.className = "turn-pink";
+    } else {
+        nameSpan.innerText = "Orange";
+        nameSpan.style.color = "#FF8C00";
+        indicator.className = "turn-orange";
+    }
+}
 async function handlePlayerMove(r, c) {
     if (isProcessing || (gameState[r][c].owner !== null && gameState[r][c].owner !== currentPlayer)) return;
     
@@ -35,11 +48,10 @@ async function handlePlayerMove(r, c) {
         await processExplosion(r, c);
         isProcessing = false;
     }
-    
     currentPlayer = currentPlayer === 1 ? 2 : 1;
+    updateTurnDisplay();
     checkWinCondition();
 }
-
 async function processExplosion(r, c) {
     let q = [{r, c}];
     while (q.length > 0) {
