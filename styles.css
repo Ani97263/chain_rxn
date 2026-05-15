@@ -4,14 +4,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
 }
-
 h1 {
     text-align: center;
     color: white;
     margin-top: 20px;
     text-shadow: 0 0 10px #FF69B4;
 }
-
 /* Timer in Upper Right */
 #timer-display {
     position: absolute;
@@ -28,8 +26,6 @@ h1 {
     box-shadow: 0 0 15px #FF69B4;
     z-index: 100;
 }
-
-/* Midnight Nebula Grid */
 #game-board {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -43,7 +39,6 @@ h1 {
     padding: 4px;
     border-radius: 8px;
 }
-
 .cell {
     background: #1a1a2e; 
     border: 1px solid #2a2a4a;
@@ -55,19 +50,15 @@ h1 {
     align-content: center;
     transition: background 0.2s;
 }
-
 .cell:hover { background: #24243e; }
-
 .cell span {
     font-size: 12px;
     margin: 1px;
     pointer-events: none;
 }
-
 /* Players */
 .player-1 { color: #FF69B4; text-shadow: 0 0 8px #FF69B4; } /* Pink */
 .player-2 { color: #FF8C00; text-shadow: 0 0 8px #FF8C00; } /* Orange */
-
 /* Result UI */
 #result-overlay {
     position: fixed;
@@ -78,7 +69,6 @@ h1 {
     align-items: center;
     z-index: 1000;
 }
-
 #result-box {
     background: #4b0082;
     padding: 40px;
@@ -88,9 +78,27 @@ h1 {
     color: white;
     box-shadow: 0 0 40px #FF69B4;
 }
+#turn-indicator {
+    position: absolute;
+    top: 70px; /* Positioned just below the timer */
+    right: 20px;
+    background: #2d004d;
+    border: 2px solid #FF69B4;
+    border-radius: 12px;
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+}
+.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
+.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
 
+#player-name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 .button-group { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
-
 .play-btn { background: #FF69B4; border: none; padding: 12px 25px; color: white; border-radius: 10px; cursor: pointer; font-weight: bold; }
 .stop-btn { background: #666; border: none; padding: 12px 25px; color: white; border-radius: 10px; cursor: pointer; font-weight: bold; }
 .play-btn:hover { transform: scale(1.1); }
