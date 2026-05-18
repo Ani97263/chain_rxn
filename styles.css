@@ -73,16 +73,24 @@ h1 {
 }
 .player-1 .heart-piece { color: #FF69B4; text-shadow: 0 0 8px #FF69B4; }
 .player-2 .heart-piece { color: #FF8C00; text-shadow: 0 0 8px #FF8C00; }
-.heart-count-1 .pos-0 { top: 50%; left: 50%; }
+.heart-count-1 .pos-0 { top: 50%; left: 50%; }/*singular heart positioned at the centre of the cell, 
+                                                which is why the top and left are at 50% postion defined as absolute initially*/
 .heart-count-2 .pos-0 { top: 50%; left: 33%; }
-.heart-count-2 .pos-1 { top: 50%; left: 67%; }
-.heart-count-3 .pos-0 { top: 32%; left: 50%; }
-.heart-count-3 .pos-1 { top: 68%; left: 32%; }
-.heart-count-3 .pos-2 { top: 68%; left: 68%; }
+.heart-count-2 .pos-1 { top: 50%; left: 67%; }/*two hearts are to be positioned, so in order to provide equal spacing throughout
+                                                it is done in such a way that the cell is divided into thirds, and the hearts 
+                                                are placed at 1/3 and 2/3 approx... top is the same as the single heart position*/
+.heart-count-3 .pos-0 { top: 33%; left: 50%; }
+.heart-count-3 .pos-1 { top: 67%; left: 33%; }
+.heart-count-3 .pos-2 { top: 67%; left: 67%; }/*three hearts are to be positioned, so from top to bottom, the cells is divided 
+                                                into thirds for two rows of hearts in an equilateral triangle, one on the top,
+                                                and two below it. for the one on top, it is positioned in the middle of the cell
+                                                while the other two are at thirds below, in a similar fashion to the position
+                                                of the 2 hearts case*/
 .heart-count-4 .pos-0 { top: 30%; left: 30%; }
 .heart-count-4 .pos-1 { top: 30%; left: 70%; }
 .heart-count-4 .pos-2 { top: 70%; left: 30%; }
-.heart-count-4 .pos-3 { top: 70%; left: 70%; }
+.heart-count-4 .pos-3 { top: 70%; left: 70%; }/*4 hearts in a square shape in the cell for a brief 75 milliseconds before it 
+                                                explodes*/
 
 #result-overlay {
     position: fixed;
