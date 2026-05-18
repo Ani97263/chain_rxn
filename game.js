@@ -31,12 +31,10 @@ function updateTurnDisplay() {
 }
 async function handlePlayerMove(r, c) {
     if (isProcessing || (gameState[r][c].owner !== null && gameState[r][c].owner !== currentPlayer)) return;
-    
     if (!timerStarted) {
         startTimer();
         timerStarted = true;
     }
-
     isProcessing = true;
     hasPlaced[currentPlayer] = true;
     gameState[r][c].count++;
@@ -44,8 +42,7 @@ async function handlePlayerMove(r, c) {
     updateCellView(r, c, gameState[r][c].count, currentPlayer);
     
     if (gameState[r][c].count >= getCapacity(r, c)) {
-        await processExplosion(r, c);
-        
+        await processExplosion(r, c);  
     }
     isProcessing=false;
     currentPlayer = currentPlayer === 1 ? 2 : 1;
@@ -75,7 +72,7 @@ async function processExplosion(r, c) {
 function checkWinCondition(isTimeUp = false) {
     let p1 = 0, p2 = 0;
     gameState.forEach(row => row.forEach(cell => { 
-        if(cell.owner === 1) p1++; if(cell.owner === 2) p2++; 
+        p1+=(cell.owner===1)?1:0; p2+=(cell.owner===2)?1:0; 
     }));
     
     if (hasPlaced[1] && hasPlaced[2]) {
