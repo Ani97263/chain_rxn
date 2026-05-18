@@ -42,6 +42,7 @@ async function handlePlayerMove(r, c) {
     updateCellView(r, c, gameState[r][c].count, currentPlayer);
     
     if (gameState[r][c].count >= getCapacity(r, c)) {
+        await new Promise(res => setTimeout(res, 75));
         await processExplosion(r, c);  
     }
     isProcessing=false;
