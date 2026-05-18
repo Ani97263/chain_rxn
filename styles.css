@@ -10,6 +10,36 @@ h1 {
     margin-top: 20px;
     text-shadow: 0 0 10px #FF69B4;
 }
+.hud-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+#timer-display, #turn-indicator {
+    background: #2d004d;
+    border-radius: 12px;
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    white-space: nowrap;
+}
+#timer-display {
+    border: 2px solid #FF69B4;
+    box-shadow: 0 0 15px #FF69B4;
+}
+#turn-indicator {
+    border: 2px solid #FF69B4;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+}
+.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
+.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
+#player-name { text-transform: uppercase; letter-spacing: 1px; }
 #game-board {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -30,16 +60,11 @@ h1 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    flex-wrap: wrap;
-    align-content: center;
+    position: relative;
+    overflow: hidden;
     transition: background 0.2s;
 }
 .cell:hover { background: #24243e; }
-.cell span {
-    font-size: 12px;
-    margin: 1px;
-    pointer-events: none;
-}
 .heart-piece {
     position: absolute;
     font-size: 14px;
@@ -47,19 +72,13 @@ h1 {
     transform: translate(-50%, -50%);
 }
 .player-1 .heart-piece { color: #FF69B4; text-shadow: 0 0 8px #FF69B4; }
-.player-1 { color: #FF69B4; text-shadow: 0 0 8px #FF69B4; }
 .player-2 .heart-piece { color: #FF8C00; text-shadow: 0 0 8px #FF8C00; }
-.player-2 { color: #FF8C00; text-shadow: 0 0 8px #FF8C00; } 
-
 .heart-count-1 .pos-0 { top: 50%; left: 50%; }
-
 .heart-count-2 .pos-0 { top: 50%; left: 33%; }
-.heart-count-2 .pos-1 { top: 50%; left: 66%; }
-
+.heart-count-2 .pos-1 { top: 50%; left: 67%; }
 .heart-count-3 .pos-0 { top: 32%; left: 50%; }
 .heart-count-3 .pos-1 { top: 68%; left: 32%; }
 .heart-count-3 .pos-2 { top: 68%; left: 68%; }
-
 .heart-count-4 .pos-0 { top: 30%; left: 30%; }
 .heart-count-4 .pos-1 { top: 30%; left: 70%; }
 .heart-count-4 .pos-2 { top: 70%; left: 30%; }
@@ -83,56 +102,10 @@ h1 {
     color: white;
     box-shadow: 0 0 40px #FF69B4;
 }
-.hud-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex; 
-    gap: 15px;     
-    z-index: 1000;
-}
-#timer-display, #turn-indicator {
-    background: #2d004d;
-    border-radius: 12px;
-    padding: 8px 15px;
-    color: white;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    white-space: nowrap; 
-}
-
-/* Specific styles for the Timer */
-#timer-display {
-    border: 2px solid #FF69B4;
-    box-shadow: 0 0 15px #FF69B4;
-}
-
-/* Turn Indicator default (starts Pink) */
-#turn-indicator {
-    border: 2px solid #FF69B4;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-    transition: all 0.3s ease;
-}
-
-/* Dynamic Classes for the Turn Box */
-.turn-pink { 
-    border-color: #FF69B4 !important; 
-    box-shadow: 0 0 15px #FF69B4 !important; 
-}
-.turn-orange { 
-    border-color: #FF8C00 !important; 
-    box-shadow: 0 0 15px #FF8C00 !important; 
-}
-#player-name {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 .button-group { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
 .play-btn { background: #FF69B4; border: none; padding: 12px 25px; color: white; border-radius: 10px; cursor: pointer; font-weight: bold; }
 .stop-btn { background: #666; border: none; padding: 12px 25px; color: white; border-radius: 10px; cursor: pointer; font-weight: bold; }
 .play-btn:hover { transform: scale(1.1); }
 .stop-btn:hover { background: #ff4444; }
-
 .draw-theme { border-color: #ffffff !important; box-shadow: 0 0 40px #ffffff !important; }
 .hidden { display: none !important; }
