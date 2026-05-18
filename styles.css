@@ -45,7 +45,7 @@ h1 {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, 1fr);
     gap: 4px;
-    width: 90vw;
+    width: 75vw;
     height: 75vh;
     margin: 20px auto;
     background: #0f0c29; 
