@@ -2,12 +2,17 @@ body {
     background-color: #050505;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+    overflow-y: auto; 
 }
 h1 {
     text-align: center;
     color: white;
     margin-top: 20px;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px #FF69B4;
 }
 .hud-container {
@@ -37,22 +42,23 @@ h1 {
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
     transition: all 0.3s ease;
 }
-.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
-.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
-#player-name { text-transform: uppercase; letter-spacing: 1px; }
 #game-board {
     display: grid;
     grid-template-columns: repeat(6, 75px);
     grid-template-rows: repeat(12, 75px);
     gap: 4px;
-    width: fit-content;
-    height: fit-content;
-    margin: 50px auto; 
+    width: max-content; 
+    height: max-content;
+    margin: 60px auto 40px auto; 
     background: #0f0c29; 
     border: 3px solid #24243e;
     padding: 4px;
     border-radius: 8px;
+    box-shadow: 0 0 20px rgba(15, 12, 41, 0.6);
 }
+.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
+.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
+#player-name { text-transform: uppercase; letter-spacing: 1px; }
 .cell {
     width=75px;
     height=75px;
