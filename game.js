@@ -36,16 +36,18 @@ async function handlePlayerMove(r, c) {
         startTimer();
         timerStarted = true;
     }
+
+    isProcessing = true;
     hasPlaced[currentPlayer] = true;
     gameState[r][c].count++;
     gameState[r][c].owner = currentPlayer;
     updateCellView(r, c, gameState[r][c].count, currentPlayer);
     
     if (gameState[r][c].count >= getCapacity(r, c)) {
-        isProcessing = true;
         await processExplosion(r, c);
-        isProcessing = false;
+        
     }
+    isProcessing=false;
     currentPlayer = currentPlayer === 1 ? 2 : 1;
     updateTurnDisplay();
     checkWinCondition();
