@@ -44,21 +44,21 @@ h1 {
 }
 #game-board {
     display: grid;
-    grid-template-columns: repeat(6, 40px); 
-    grid-template-rows: repeat(12, 40px);    
+    grid-template-columns: repeat(6, 36px); 
+    grid-template-rows: repeat(12, 36px);    
     gap: 3px;
     width: max-content; 
     height: max-content;
-    margin: 40px auto 20px auto;
+    margin: 30px auto 20px auto; 
     background: #0f0c29; 
     border: 3px solid #24243e;
     padding: 4px;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(15, 12, 39, 0.6);
-}
+    box-shadow: 0 0 20px rgba(15, 12, 41, 0.6);
+} 
 .cell {
-    width: 40px;  
-    height: 40px; 
+    width: 36px;  
+    height: 36px; 
     box-sizing: border-box;
     background: #1a1a2e; 
     border: 1px solid #2a2a4a;
@@ -72,7 +72,7 @@ h1 {
 }
 .heart-piece {
     position: absolute;
-    font-size: 10px; 
+    font-size: 9px; 
     transition: all 0.2s ease-out;
     transform: translate(-50%, -50%);
 }
