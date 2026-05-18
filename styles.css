@@ -44,8 +44,8 @@ h1 {
 }
 #game-board {
     display: grid;
-    grid-template-columns: repeat(6, 42px); 
-    grid-template-rows: repeat(12, 42px);    
+    grid-template-columns: repeat(6, 40px); 
+    grid-template-rows: repeat(12, 40px);    
     gap: 3px;
     width: max-content; 
     height: max-content;
@@ -54,11 +54,11 @@ h1 {
     border: 3px solid #24243e;
     padding: 4px;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(15, 12, 41, 0.6);
+    box-shadow: 0 0 20px rgba(15, 12, 39, 0.6);
 }
 .cell {
-    width: 42px;  
-    height: 42px; 
+    width: 40px;  
+    height: 40px; 
     box-sizing: border-box;
     background: #1a1a2e; 
     border: 1px solid #2a2a4a;
