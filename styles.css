@@ -44,8 +44,8 @@ h1 {
 }
 #game-board {
     display: grid;
-    grid-template-columns: repeat(6, 75px);
-    grid-template-rows: repeat(12, 75px);
+    grid-template-columns: repeat(6, 40px);
+    grid-template-rows: repeat(12, 40px);
     gap: 4px;
     width: max-content; 
     height: max-content;
@@ -60,8 +60,8 @@ h1 {
 .turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
 #player-name { text-transform: uppercase; letter-spacing: 1px; }
 .cell {
-    width=75px;
-    height=75px;
+    width=40px;
+    height=40px;
     box-sizing=border-box
     background: #1a1a2e; 
     border: 1px solid #2a2a4a;
