@@ -19,6 +19,7 @@ function updateCellView(r, c, count, owner) {
     for (let i = 0; i < count; i++) {
         const heart = document.createElement('span');
         heart.innerHTML = "♥";
+        heart.className = `heart-piece pos-${i}`;
         cell.appendChild(heart);
     }
 }
