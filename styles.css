@@ -44,25 +44,22 @@ h1 {
 }
 #game-board {
     display: grid;
-    grid-template-columns: repeat(6, 40px);
-    grid-template-rows: repeat(12, 40px);
-    gap: 4px;
+    grid-template-columns: repeat(6, 42px); 
+    grid-template-rows: repeat(12, 42px);    
+    gap: 3px;
     width: max-content; 
     height: max-content;
-    margin: 60px auto 40px auto; 
+    margin: 40px auto 20px auto;
     background: #0f0c29; 
     border: 3px solid #24243e;
     padding: 4px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(15, 12, 41, 0.6);
 }
-.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
-.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
-#player-name { text-transform: uppercase; letter-spacing: 1px; }
 .cell {
-    width=40px;
-    height=40px;
-    box-sizing=border-box
+    width: 42px;  
+    height: 42px; 
+    box-sizing: border-box;
     background: #1a1a2e; 
     border: 1px solid #2a2a4a;
     display: flex;
@@ -73,13 +70,17 @@ h1 {
     overflow: hidden;
     transition: background 0.2s;
 }
-.cell:hover { background: #24243e; }
 .heart-piece {
     position: absolute;
-    font-size: 14px;
+    font-size: 10px; 
     transition: all 0.2s ease-out;
     transform: translate(-50%, -50%);
 }
+.turn-pink { border-color: #FF69B4 !important; box-shadow: 0 0 15px #FF69B4 !important; }
+.turn-orange { border-color: #FF8C00 !important; box-shadow: 0 0 15px #FF8C00 !important; }
+#player-name { text-transform: uppercase; letter-spacing: 1px; }
+}
+.cell:hover { background: #24243e; }
 .player-1 .heart-piece { color: #FF69B4; text-shadow: 0 0 8px #FF69B4; }
 .player-2 .heart-piece { color: #FF8C00; text-shadow: 0 0 8px #FF8C00; }
 .heart-count-1 .pos-0 { top: 50%; left: 50%; }/*singular heart positioned at the centre of the cell, 
